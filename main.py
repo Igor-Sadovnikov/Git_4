@@ -39,7 +39,6 @@ class MyWidget(QMainWindow):
             zapros += ' WHERE '
             out = ' AND '.join(sp_cond)
             zapros += out
-        print(zapros)
         res = cur.execute(zapros)
         self.tableWidget.setRowCount(0)
         self.tableWidget.setColumnCount(7)
@@ -53,6 +52,7 @@ class MyWidget(QMainWindow):
                 self.tableWidget.setItem(
                     i, j, QTableWidgetItem(str(elem)))
         self.tableWidget.resizeColumnsToContents()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
